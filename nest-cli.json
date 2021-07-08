@@ -1,0 +1,30 @@
+{
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "apps/authorization/src",
+  "monorepo": true,
+  "root": "apps/authorization",
+  "compilerOptions": {
+    "webpack": true,
+    "tsConfigPath": "apps/authorization/tsconfig.app.json"
+  },
+  "projects": {
+    "authorization": {
+      "type": "application",
+      "root": "apps/authorization",
+      "entryFile": "main",
+      "sourceRoot": "apps/authorization/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/authorization/tsconfig.app.json"
+      }
+    },
+    "broker": {
+      "type": "application",
+      "root": "apps/broker",
+      "entryFile": "main",
+      "sourceRoot": "apps/broker/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/broker/tsconfig.app.json"
+      }
+    }
+  }
+}
