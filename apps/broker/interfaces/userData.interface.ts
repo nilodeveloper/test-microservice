@@ -1,3 +1,4 @@
+import { Profile }  from './profile.interface';
 export interface UserData {
     dataCadastro: number, //TODO colocar timestamp
     dataUltimoLogin: number, //TODO colocar timestamp
@@ -8,6 +9,6 @@ export interface UserData {
     login:string,
     isAssociado: boolean,
     permiteConferencia: boolean,
-    profiles: any
+    profiles: Profile[],
     canal: number
   }
