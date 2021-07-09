@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+    container_name: 'rabbitmq'
+    ports:
+      - 5672:5672
+      - 15672:15672
+    networks:
+      - monoreponet
+  db:
+    image: mongo
+    container_name: db_mongo
+    volumes:
+      - ./mongodata:/data/db
+    ports:
+      - "27017:27017"
+    networks:
+      - monoreponet
+  redis:
+    image: redis
+    command: redis-server --requirepass Redis2019!
+    ports:
+      - "6379:6379" 
+
+networks:
+  monoreponet: 
+    driver: bridge
