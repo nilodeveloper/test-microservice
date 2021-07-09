@@ -18,6 +18,11 @@ services:
       - "27017:27017"
     networks:
       - monoreponet
+  redis:
+    image: redis
+    command: redis-server --requirepass Redis2019!
+    ports:
+      - "6379:6379" 
 
 networks:
   monoreponet: 
